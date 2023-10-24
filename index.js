@@ -76,7 +76,7 @@ document.getElementById("btn-bt4").addEventListener("click", function () {
   ).innerHTML = `Tổng số dương nhỏ nhất ${soDuongNhoNhat}`;
 });
 
-// BT5 : Tìm số chẵn nhỏ nhất
+// BT5 : Tìm số chẵn Cuối Cùng
 
 document.getElementById("btn-bt5").addEventListener("click", function () {
   var soChanCuoiCung = Infinity;
@@ -90,4 +90,33 @@ document.getElementById("btn-bt5").addEventListener("click", function () {
   document.getElementById(
     "ketQuaTimSoChanCuoiCung"
   ).innerHTML = `Tổng số Chẵn Cuối Cùng ${soChanCuoiCung}`;
+});
+
+// BT7 : Sắp xếp tăng dần
+document.getElementById("btn-bt7").addEventListener("click", function () {
+  var arrSoNguyen = arrNhapSo.sort();
+  var arrSoNguyen = 0;
+  arrSoNguyen = arrNhapSo.sort(function (a, b) {
+    return a - b;
+  });
+  console.log(arrSoNguyen);
+  document.getElementById(
+    "ketQuaSapXepTangDan"
+  ).innerHTML = `Kết quả sắp xếp tăng dần: ${arrSoNguyen}`;
+});
+
+// BT8 : Tìm số nguyên đầu tiên
+document.getElementById("btn-bt8").addEventListener("click", function () {
+  var soNguyenDauTien = [];
+  for (i = 2; i <= a - 1; i++) {
+    if (a % i == 0) {
+      console.log("Not Prime");
+      return;
+    }
+  }
+  console.log(soNguyenDauTien);
+  console.log("Prime");
+  document.getElementById(
+    "ketQuaTimSoNguyenDauTien"
+  ).innerHTML = `Tổng số nguyên đầu tiên ${soNguyenDauTien}`;
 });
