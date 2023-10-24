@@ -16,101 +16,334 @@
       integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT"
       crossorigin="anonymous"
     />
+
+    <!-- css  -->
+    <link rel="stylesheet" href="./css/style.css" />
   </head>
 
   <body>
-    <div class="accordion" id="accordionExample">
-      <div class="accordion-item">
-        <h2 class="accordion-header">
-          <button
-            class="accordion-button"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#collapseOne"
-            aria-expanded="true"
-            aria-controls="collapseOne"
-          >
-            Accordion Item #1
-          </button>
-        </h2>
+    <div class="container">
+      <div class="mb-5">
+        <h2>BÀI TẬP VỀ MẢNG</h2>
+        <div class="mb-3 w-50">
+          <label for="" class="form-label">Nhập số N</label>
+          <input
+            type="text"
+            class="form-control"
+            id="nhapSoN"
+            aria-describedby="helpId"
+            placeholder="Nhập Số N"
+          />
+        </div>
+        <button class="mb-3 btn btn-dark" id="btn-bt">Thêm số</button>
         <div
-          id="collapseOne"
-          class="accordion-collapse collapse show"
-          data-bs-parent="#accordionExample"
+          class="ketQuaNhapSoN bg-primary bg-opacity-25 p-2"
+          id="ketQuaNhapSoN"
         >
-          <div class="accordion-body">
-            <strong>This is the first item's accordion body.</strong> It is
-            shown by default, until the collapse plugin adds the appropriate
-            classes that we use to style each element. These classes control the
-            overall appearance, as well as the showing and hiding via CSS
-            transitions. You can modify any of this with custom CSS or
-            overriding our default variables. It's also worth noting that just
-            about any HTML can go within the <code>.accordion-body</code>,
-            though the transition does limit overflow.
+          Kết quả thêm số N :
+        </div>
+      </div>
+      <!-- ---------- BÀI TẬP 1 ----------- -->
+      <div class="accordion" id="accordionExample">
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button
+              class="accordion-button"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#collapseOne"
+              aria-expanded="true"
+              aria-controls="collapseOne"
+            >
+              1. Tổng Số Dương
+            </button>
+          </h2>
+          <div
+            id="collapseOne"
+            class="accordion-collapse collapse"
+            data-bs-parent="#accordionExample"
+          >
+            <button class="mb-3 btn btn-dark" id="btn-bt1">Tính Tổng</button>
+            <div
+              class="ketQua bg-primary bg-opacity-25 p-2"
+              id="ketQuaTinhTong"
+            >
+              Kết quả tính tổng :
+            </div>
           </div>
         </div>
       </div>
-      <div class="accordion-item">
-        <h2 class="accordion-header">
-          <button
-            class="accordion-button collapsed"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#collapseTwo"
-            aria-expanded="false"
-            aria-controls="collapseTwo"
+
+      <!-- ---------- BÀI TẬP 2 -----------  -->
+      <div class="accordion" id="accordionExample">
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button
+              class="accordion-button"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#collapseTwo"
+              aria-expanded="false"
+              aria-controls="collapseTwo"
+            >
+              2.Đếm Số Dương
+            </button>
+          </h2>
+          <div
+            id="collapseTwo"
+            class="accordion-collapse collapse"
+            data-bs-parent="#accordionExample"
           >
-            Accordion Item #2
-          </button>
-        </h2>
-        <div
-          id="collapseTwo"
-          class="accordion-collapse collapse"
-          data-bs-parent="#accordionExample"
-        >
-          <div class="accordion-body">
-            <strong>This is the second item's accordion body.</strong> It is
-            hidden by default, until the collapse plugin adds the appropriate
-            classes that we use to style each element. These classes control the
-            overall appearance, as well as the showing and hiding via CSS
-            transitions. You can modify any of this with custom CSS or
-            overriding our default variables. It's also worth noting that just
-            about any HTML can go within the <code>.accordion-body</code>,
-            though the transition does limit overflow.
+            <button class="mb-3 btn btn-dark" id="btn-bt2">Đếm Số Dương</button>
+            <div
+              class="ketQua bg-primary bg-opacity-25 p-2"
+              id="ketQuaDemSoDuong"
+            >
+              Kết quả đếm số dương :
+            </div>
           </div>
         </div>
       </div>
-      <div class="accordion-item">
-        <h2 class="accordion-header">
-          <button
-            class="accordion-button collapsed"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#collapseThree"
-            aria-expanded="false"
-            aria-controls="collapseThree"
+
+      <!-- ---------- BÀI TẬP 3 -----------  -->
+      <div class="accordion" id="accordionExample">
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button
+              class="accordion-button"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#collapseThree"
+              aria-expanded="false"
+              aria-controls="collapseThree"
+            >
+              3. Tìm Số Nhỏ Nhất
+            </button>
+          </h2>
+          <div
+            id="collapseThree"
+            class="accordion-collapse collapse"
+            data-bs-parent="#accordionExample"
           >
-            Accordion Item #3
-          </button>
-        </h2>
-        <div
-          id="collapseThree"
-          class="accordion-collapse collapse"
-          data-bs-parent="#accordionExample"
-        >
-          <div class="accordion-body">
-            <strong>This is the third item's accordion body.</strong> It is
-            hidden by default, until the collapse plugin adds the appropriate
-            classes that we use to style each element. These classes control the
-            overall appearance, as well as the showing and hiding via CSS
-            transitions. You can modify any of this with custom CSS or
-            overriding our default variables. It's also worth noting that just
-            about any HTML can go within the <code>.accordion-body</code>,
-            though the transition does limit overflow.
+            <button class="mb-3 btn btn-dark" id="btn-bt3">
+              Tìm Số Nhỏ Nhất
+            </button>
+            <div
+              class="ketQua bg-primary bg-opacity-25 p-2"
+              id="ketQuaTimSoNhoNhat"
+            >
+              Kết quả tìm số nhỏ nhất :
+            </div>
           </div>
         </div>
       </div>
+
+      <!-- ---------- BÀI TẬP 4 -----------  -->
+      <div class="accordion" id="accordionExample">
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button
+              class="accordion-button"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#collapseFour"
+              aria-expanded="false"
+              aria-controls="collapseFour"
+            >
+              4. Tìm Số Dương Nhỏ Nhất
+            </button>
+          </h2>
+          <div
+            id="collapseFour"
+            class="accordion-collapse collapse"
+            data-bs-parent="#accordionExample"
+          >
+            <button class="mb-3 btn btn-dark" id="btn-bt4">
+              Tìm Số Dương Nhỏ Nhất
+            </button>
+            <div
+              class="ketQua bg-primary bg-opacity-25 p-2"
+              id="ketQuaTimSoDuongNhoNhat"
+            >
+              Kết quả tìm số dương nhỏ nhất :
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- ---------- BÀI TẬP 5 -----------  -->
+      <div class="accordion" id="accordionExample">
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button
+              class="accordion-button"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#collapseFive"
+              aria-expanded="false"
+              aria-controls="collapseFive"
+            >
+              5. Tìm Số Chẵn Cuối Cùng
+            </button>
+          </h2>
+          <div
+            id="collapseFive"
+            class="accordion-collapse collapse"
+            data-bs-parent="#accordionExample"
+          >
+            <button class="mb-3 btn btn-dark" id="btn-bt5">
+              Tìm Số Chẵn Cuối Cùng
+            </button>
+            <div
+              class="ketQua bg-primary bg-opacity-25 p-2"
+              id="ketQuaTimSoChanCuoiCung"
+            >
+              Kết quả tìm số chẵn cuối cùng :
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ---------- BÀI TẬP 6 -----------  -->
+      <!-- <div class="accordion" id="accordionExample">
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button
+              class="accordion-button"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#collapseSix"
+              aria-expanded="false"
+              aria-controls="collapseSix"
+            >
+              6. Đổi Chỗ
+            </button>
+          </h2>
+          <div
+            id="collapseSix"
+            class="accordion-collapse collapse"
+            data-bs-parent="#accordionExample"
+          >
+            <button class="mb-3 btn btn-dark">Đổi Chỗ</button>
+            <div class="ketQua bg-primary bg-opacity-25 p-2">
+              Kết quả đổi chỗ :
+            </div>
+          </div>
+        </div>
+      </div> -->
+
+      <!-- ---------- BÀI TẬP 7  -----------  -->
+      <!-- <div class="accordion" id="accordionExample">
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button
+              class="accordion-button"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#collapseSeven"
+              aria-expanded="false"
+              aria-controls="collapseSeven"
+            >
+              7. Sắp Xếp Tăng Dần
+            </button>
+          </h2>
+          <div
+            id="collapseSeven"
+            class="accordion-collapse collapse"
+            data-bs-parent="#accordionExample"
+          >
+            <button class="mb-3 btn btn-dark">Sắp Xếp Tăng Dần</button>
+            <div class="ketQua bg-primary bg-opacity-25 p-2">
+              Kết quả sắp xếp tăng dần :
+            </div>
+          </div>
+        </div>
+      </div> -->
+
+      <!-- ---------- BÀI TẬP 8  -----------  -->
+      <!-- <div class="accordion" id="accordionExample">
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button
+              class="accordion-button"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#collapseEight"
+              aria-expanded="false"
+              aria-controls="collapseEight"
+            >
+              8. Tìm Số Nguyên Tố Đầu Tiên
+            </button>
+          </h2>
+          <div
+            id="collapseEight"
+            class="accordion-collapse collapse"
+            data-bs-parent="#accordionExample"
+          >
+            <button class="mb-3 btn btn-dark">Tìm Số Nguyên Tố Đầu Tiên</button>
+            <div class="ketQua bg-primary bg-opacity-25 p-2">
+              Kết quả tìm số nguyên tố đầu tiên :
+            </div>
+          </div>
+        </div>
+      </div> -->
+
+      <!-- ---------- BÀI TẬP 9  -----------  -->
+      <!-- <div class="accordion" id="accordionExample">
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button
+              class="accordion-button"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#collapseNine"
+              aria-expanded="false"
+              aria-controls="collapseNine"
+            >
+              9. Đếm Số Nguyên
+            </button>
+          </h2>
+          <div
+            id="collapseNine"
+            class="accordion-collapse collapse"
+            data-bs-parent="#accordionExample"
+          >
+            <button class="mb-3 btn btn-dark">Đếm Số Nguyên</button>
+            <div class="ketQua bg-primary bg-opacity-25 p-2">
+              Kết quả đếm số nguyên :
+            </div>
+          </div>
+        </div>
+      </div> -->
+
+      <!-- ---------- BÀI TẬP 10  -----------  -->
+      <!-- <div class="accordion" id="accordionExample">
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button
+              class="accordion-button"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#collapseTen"
+              aria-expanded="false"
+              aria-controls="collapseTen"
+            >
+              10. So Sánh Số Lương Số Âm và Số Dương
+            </button>
+          </h2>
+          <div
+            id="collapseTen"
+            class="accordion-collapse collapse"
+            data-bs-parent="#accordionExample"
+          >
+            <button class="mb-3 btn btn-dark">So Sánh</button>
+            <div class="ketQua bg-primary bg-opacity-25 p-2">
+              Kết quả So sánh:
+            </div>
+          </div>
+        </div>
+      </div> -->
     </div>
+
     <!-- Bootstrap JavaScript Libraries -->
     <script
       src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
