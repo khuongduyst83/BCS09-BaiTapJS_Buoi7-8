@@ -1,6 +1,8 @@
 //B2: Tạo mảng và push dữ liệu vào trong mảng
 var arrNhapSo = [];
+var arrNhapSoThuc = [];
 // B1: Lấy dữ liệu các số người dùng nhập
+
 document.getElementById("btn-bt").onclick = function () {
   var nhapSoN = document.getElementById("nhapSoN").value * 1;
   if (isNaN(nhapSoN)) {
@@ -79,17 +81,44 @@ document.getElementById("btn-bt4").addEventListener("click", function () {
 // BT5 : Tìm số chẵn Cuối Cùng
 
 document.getElementById("btn-bt5").addEventListener("click", function () {
-  var soChanCuoiCung = Infinity;
-  for (i = 0; i < arrNhapSo.length; i++) {
-    if (arrNhapSo[i] < soChanCuoiCung) {
+  var soChanCuoiCung = -1;
+  for (i = arrNhapSo.length - 1; i >= 0 && soChanCuoiCung == -1; i--) {
+    if (arrNhapSo[i] > 0 && arrNhapSo[i] % 2 == 0) {
       soChanCuoiCung = arrNhapSo[i];
+      console.log(soChanCuoiCung);
+      document.getElementById(
+        "ketQuaTimSoChanCuoiCung"
+      ).innerHTML = `Tổng số Chẵn Cuối Cùng ${soChanCuoiCung}`;
+    } else {
+      document.getElementById("ketQuaTimSoChanCuoiCung").innerHTML = -1;
     }
   }
+});
 
-  console.log(soChanCuoiCung);
-  document.getElementById(
-    "ketQuaTimSoChanCuoiCung"
-  ).innerHTML = `Tổng số Chẵn Cuối Cùng ${soChanCuoiCung}`;
+// BT6 : Đổi chỗ
+//Yêu cầu 6:Đổi chỗ 2 giá trị trong mảng dãy số đã nhập theo vị trí (Cho nhập vào 2 vị trí muốn đổi chỗ giá trị)
+document.getElementById("btn-bt10").addEventListener("click", function () {
+  var viTri1 = document.getElementById("viTri1").value * 1;
+  var viTri2 = document.getElementById("viTri2").value * 1;
+
+  if (
+    viTri1 >= 0 &&
+    viTri1 < arrNhapSo.length &&
+    viTri2 >= 0 &&
+    viTri2 < arrNhapSo.length
+  ) {
+    // console.log(arrSoNhap[viTri1]);
+    // console.log(arrSoNhap[viTri2]);
+    var tamThoi = arrNhapSo[viTri1];
+    arrNhapSo[viTri1] = arrNhapSo[viTri2];
+    arrNhapSo[viTri2] = tamThoi;
+    // console.log(arrSoNhap);
+    document.getElementById(
+      "ketQuaDoiCho"
+    ).innerHTML = `Mảng dãy số sau khi đã đổi chỗ vị trí 2 giá trị là: ${arrNhapSo}`;
+  } else {
+    alert("Yêu cầu nhập vào vị trí hợp lệ");
+  }
 });
 
 // BT7 : Sắp xếp tăng dần
@@ -107,16 +136,57 @@ document.getElementById("btn-bt7").addEventListener("click", function () {
 
 // BT8 : Tìm số nguyên đầu tiên
 document.getElementById("btn-bt8").addEventListener("click", function () {
-  var soNguyenDauTien = [];
-  for (i = 2; i <= a - 1; i++) {
-    if (a % i == 0) {
-      console.log("Not Prime");
+  function checkSo(so) {
+    if (so <= 1) return false;
+    for (var z = 2; z <= Math.sqrt(so); z++) {
+      if (so % z === 0) return false;
+    }
+    return true;
+  }
+  var soNguyenToDauTien = "";
+  for (var i = 0; i < arrNhapSo.length; i++) {
+    if (checkSo(arrNhapSo[i])) {
+      soNguyenToDauTien += arrNhapSo[i];
+      document.getElementById(
+        "ketQuaTimSoNguyenDauTien"
+      ).innerHTML = `Số ${soNguyenToDauTien} là số nguyên tố đầu tiên trong mảng dãy số`;
       return;
+    } else {
+      document.getElementById("ketQuaTimSoNguyenDauTien").innerHTML = -1;
     }
   }
-  console.log(soNguyenDauTien);
-  console.log("Prime");
+});
+
+// BT 9 : Đếm số Nguyên
+document.getElementById("btn-bt9").addEventListener("click", function () {
+  var demSoNguyen = 0;
+  for (a = 0; a < arrNhapSoThuc.length; a++) {
+    if (arrNhapSoThuc[a] % 1 == 0) {
+      demSoNguyen++;
+    }
+  }
   document.getElementById(
-    "ketQuaTimSoNguyenDauTien"
-  ).innerHTML = `Tổng số nguyên đầu tiên ${soNguyenDauTien}`;
+    "ketQuaDemSoNguyen"
+  ).innerHTML = `Kết quả đếm được ${demSoNguyen} số nguyên`;
+});
+
+// BT 10 : So Sánh Số Lượng Số Âm và Số Dương
+document.getElementById("btn-bt10").addEventListener("click", function () {
+  var soDuongSoSanh = 0;
+  var soAmSoSanh = 0;
+
+  for (i = 0; i < arrNhapSo.length; i++) {
+    if (arrNhapSo[i] < 0) {
+      soAmSoSanh++;
+    } else if (arrNhapSo[i] > 0) {
+      soDuongSoSanh++;
+    }
+  }
+  if (soDuongSoSanh > soAmSoSanh) {
+    document.getElementById("ketQuaSoSanh").innerHTML = "số Dương > số Âm";
+  } else if (soDuongSoSanh < soAmSoSanh) {
+    document.getElementById("ketQuaSoSanh").innerHTML = "Số Dương < số Âm";
+  } else {
+    document.getElementById("ketQuaSoSanh").innerHTML = "số Dương = số Âm";
+  }
 });
