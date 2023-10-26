@@ -97,7 +97,7 @@ document.getElementById("btn-bt5").addEventListener("click", function () {
 
 // BT6 : Đổi chỗ
 //Yêu cầu 6:Đổi chỗ 2 giá trị trong mảng dãy số đã nhập theo vị trí (Cho nhập vào 2 vị trí muốn đổi chỗ giá trị)
-document.getElementById("btn-bt10").addEventListener("click", function () {
+document.getElementById("btn-bt6").addEventListener("click", function () {
   var viTri1 = document.getElementById("viTri1").value * 1;
   var viTri2 = document.getElementById("viTri2").value * 1;
 
@@ -159,16 +159,30 @@ document.getElementById("btn-bt8").addEventListener("click", function () {
 
 // BT 9 : Đếm số Nguyên
 document.getElementById("btn-bt9").addEventListener("click", function () {
-  var demSoNguyen = 0;
+  var coutSoN = 1;
   for (a = 0; a < arrNhapSoThuc.length; a++) {
     if (arrNhapSoThuc[a] % 1 == 0) {
-      demSoNguyen++;
+      coutSoN++;
     }
   }
+
   document.getElementById(
     "ketQuaDemSoNguyen"
-  ).innerHTML = `Kết quả đếm được ${demSoNguyen} số nguyên`;
+  ).innerHTML = `Kết quả đếm được ${coutSoN} số nguyên`;
 });
+
+// document.getElementById("btn-bt2").addEventListener("click", function () {
+//   var countSoD = 0;
+//   for (i = 0; i < arrNhapSo.length; i++) {
+//     if (arrNhapSo[i] > 0) {
+//       countSoD++;
+//     }
+//   }
+//   console.log(countSoD);
+//   document.getElementById(
+//     "ketQuaDemSoDuong"
+//   ).innerHTML = `Tổng các số dương là: ${countSoD}`;
+// });
 
 // BT 10 : So Sánh Số Lượng Số Âm và Số Dương
 document.getElementById("btn-bt10").addEventListener("click", function () {
